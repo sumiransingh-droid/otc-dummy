@@ -1,0 +1,124 @@
+<div class="row mainform">
+
+    <div class="col-md-7 left">
+
+        <img src="assets\images\leftimg.png">
+
+    </div>
+    <div class="col-md-5 bg-light form">
+        <div>
+            <img src="assets\images\name-logo.png">
+        </div>
+        <h2>Start Your Journey With Us</h2>
+        <p class="text-secondary">India's 1st OTC Platform for Power Sector</p>
+        <hr>
+        <h5>Please Enter Your basic Detail</h5>
+        <form [formGroup]="registerform" (ngSubmit)="loginUser(registerform.value)">
+
+            <div class="row mt-3 ">
+                <div class="col-md-6">
+
+                    <input type="text" class="form-control" placeholder="First Name" name="fname"
+                        formControlName="first_name">
+                </div>
+                <div class="col-md-6">
+
+                    <input type="text" class="form-control" placeholder="Last Name" name="lname"
+                        formControlName="last_name">
+                </div>
+            </div>
+            <div class="row mt-4">
+
+                <div class="col-md-6">
+
+                    <input type="tel" class="form-control" placeholder="Mobile no." name="mobile"
+                        formControlName="mobileno">
+                </div>
+                <div class="col-md-6">
+
+                    <input type="email" class="form-control" placeholder="Email" name="email" formControlName="email">
+                </div>
+            </div>
+            <div class="col-md-12 mt-4">
+                <input class="form-control" placeholder="Organisation Name" formControlName="orgname">
+            </div>
+            <div class=" row mt-4 ">
+                <h5>Member Type</h5>
+                <div class="col-4 form-check p-2" *ngFor="let option of newuser  ">
+                    <input type="radio" class="form-check-input check " name="user_category_id" formControlName="user_category_id"
+                    [id]="option.id" value="{{option.id}}" (click)="clicked(option.id )">
+                    <label class="form-check-label" [for]="option.id">{{option.type}}</label>
+                </div>
+            </div>
+            <div class=" row mt-2 p-2 " *ngIf="newvalue === 3">
+                <h5>Sub Member Type</h5>
+                <div class="d-flex justify-content-center " *ngIf="loader == true">
+                    <div class="spinner-border" role="status">
+
+                    </div>
+                </div>
+                <div class="col-4 form-check p-2" *ngFor="let option_sub of newoptionvalue  ">
+                    <label class="form-check-label">{{option_sub.name}}</label>
+                    <input type="radio" class="form-check-input check" formControlName="user_sub_category_id" [id]="option_sub.id"
+                        [value]="option_sub.id">
+                </div>
+            </div>
+
+            <div class="row mt-4">
+
+                <div class="col-md-6 ">
+                    <input class="form-control" placeholder="Password" type="password" formControlName="password"
+                        [type]="showPassword?!'text':'password'">
+
+                </div>
+                <div class="col-md-6 ">
+                    <input class="form-control" placeholder="Confirm Password" type="password"
+                        formControlName="password_confirmation" [type]="showPassword?'text':'password'">
+                    <!-- <div *ngIf="registerform.controls['confirmpassword'].errors?.passwordmatcherror" class="text-danger">
+                        Passwords do not match.
+                      </div> -->
+                    <span style="color:red"
+                        *ngIf="registerform.errors?.['passwordmatcherror'] && confirmpassword?.valid && confirmpassword?.touched ">Password
+                        does not match</span>
+                    <span style="color:red" *ngIf="confirmpassword?.invalid && confirmpassword?.touched ">Field is
+                        Required</span>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+
+                    </div>
+                    <div class="col-md-6 ps-5 mt-2">
+
+
+                        <div class="form-check text-start">
+                            <input class="form-check-input" type="checkbox" value="rememberme" id="flexshowPass"
+                                (click)="togglePasswordVisibility()" >
+                            <label class="form-check-label" for="flexshowPass">show Password</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-check m-2 p-4 ">
+                    <input class="form-check-input" type="checkbox" id="terms" required>
+                    <label class="form-check-label" for="terms">By registering to this platform you accept our <u>Terms
+                            of Use</u> and our <u>Privacy Policy</u> </label>
+                </div>
+
+
+                <div class="col-md-4 mt-2">
+                    <button [disabled]="registerform.invalid" class="btn btn-primary btn-lg"  type="submit">Create
+                        Account</button>
+                </div>
+
+              <div class="mt-3">  <hr > </div>
+
+              <div class="text-center">
+                <p>Already have an account? <a href="#">Log In</a></p>
+              </div>
+
+            </div>
+        </form>
+
+    </div>
+</div>

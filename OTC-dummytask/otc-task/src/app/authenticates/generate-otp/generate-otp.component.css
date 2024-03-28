@@ -1,0 +1,25 @@
+.mainform{
+    width: 100%;
+    margin:auto;
+    padding: 30px;
+
+}
+.form{
+    margin-top: 30px;
+    box-shadow: linear-gradient(5px 5px 5px 5px black);
+    border-radius: 10px; 
+    padding:40px;
+    
+}
+.left img{
+    margin: 70px;
+    
+}
+.otp-border input{
+    width: 70px;
+    margin: 10px;
+    height: 50px;
+    display: block;
+    /* border: 2px black; */
+
+}

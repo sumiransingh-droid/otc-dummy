@@ -1,0 +1,82 @@
+<div class="row mainform">
+
+    <div class="col-md-7 left">
+
+        <img src="assets\images\otp-image.png">
+
+    </div>
+    <div class="col-md-5 bg-light form">
+        <div>
+            <img src="assets\images\name-logo.png">
+        </div>
+        <h2>OTP Verification</h2>
+        <p class="text-secondary"> A verification code has been sent to your registered email and mobile number. </p>
+        <hr>
+        <form [formGroup]="otpform" (ngSubmit)="otpuser()">
+            <p>{{description}}</p>
+            <p>Enter Email OTP</p>
+            <div class="row otp-border">
+
+                <div class="col-2">
+                    <input type="tel" class="form-control text-center" name="otp1" formControlName="otp1" maxlength="1">
+
+                </div>
+                <div class="col-2">
+                    <input type="tel" class="form-control text-center" name="otp2" formControlName="otp2" maxlength="1">
+
+                </div>
+                <div class="col-2">
+                    <input type="tel" class="form-control text-center" name="otp3" formControlName="otp3" maxlength="1">
+
+                </div>
+                <div class="col-2">
+                    <input type="tel" class="form-control text-center" name="otp4" formControlName="otp4" maxlength="1">
+
+                </div>
+                <div class="col-2">
+
+                    <input type="tel" class="form-control text-center" name="otp5" formControlName="otp5" maxlength="1">
+                </div>
+                <div class="col-2">
+
+                    <input type="tel" class="form-control text-center" name="otp6" formControlName="otp6" maxlength="1">
+                </div>
+
+            </div>
+
+            <p>Enter Mobile OTP</p>
+            <div class="row otp-border">
+                <div class="col-2">
+                    <input type="tel" class="form-control text-center" name="otp7" formControlName="otp7" maxlength="1">
+
+                </div>
+                <div class="col-2">
+                    <input type="tel" class="form-control text-center" name="otp8" formControlName="otp8" maxlength="1">
+
+                </div>
+                <div class="col-2">
+                    <input type="tel" class="form-control text-center" name="otp9" formControlName="otp9"  maxlength="1">
+
+                </div>
+                <div class="col-2">
+                    <input type="tel" class="form-control text-center" name="otp10" formControlName="otp10" maxlength="1">
+
+                </div>
+                <div class="col-2">
+
+                    <input type="tel" class="form-control text-center" name="otp11" formControlName="otp11" maxlength="1">
+                </div>
+                <div class="col-2">
+                    <input type="tel" class="form-control text-center" name="otp12" formControlName="otp12" maxlength="1">
+
+                </div>
+
+            </div>
+
+            <button class="btn btn-primary btn-lg mt-2">Validate OTP</button>
+
+        </form>
+
+
+    </div>
+</div>
